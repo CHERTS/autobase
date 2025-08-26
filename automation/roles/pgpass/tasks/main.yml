@@ -1,5 +1,7 @@
 ---
 - name: "Create postgres home directory ({{ postgresql_home_dir }})"
+  become: true
+  become_user: root
   ansible.builtin.file:
     path: "{{ postgresql_home_dir }}"
     state: directory
